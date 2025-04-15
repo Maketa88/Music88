@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import VolumeControl from './VolumeControl';
 
 function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong }) {
   const audioRef = useRef(null);
@@ -110,44 +111,51 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong }
                 </div>
               </div>
               
-              {/* Controles */}
-              <div className="flex justify-center md:justify-start items-center space-x-8 mt-2">
-                <button 
-                  className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
-                  onClick={onPrevSong}
-                  aria-label="Canción anterior"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-                  </svg>
-                </button>
-                
-                <button 
-                  className="p-4 bg-violet-600 hover:bg-violet-500 text-white rounded-full shadow-lg focus:outline-none transform hover:scale-105 transition-all"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  aria-label={isPlaying ? "Pausar" : "Reproducir"}
-                >
-                  {isPlaying ? (
+              <div className="space-y-4">
+                {/* Controles de reproducción */}
+                <div className="flex justify-center md:justify-start items-center space-x-8">
+                  <button 
+                    className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
+                    onClick={onPrevSong}
+                    aria-label="Canción anterior"
+                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                     </svg>
-                  ) : (
+                  </button>
+                  
+                  <button 
+                    className="p-4 bg-violet-600 hover:bg-violet-500 text-white rounded-full shadow-lg focus:outline-none transform hover:scale-105 transition-all"
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    aria-label={isPlaying ? "Pausar" : "Reproducir"}
+                  >
+                    {isPlaying ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                  </button>
+                  
+                  <button 
+                    className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
+                    onClick={onNextSong}
+                    aria-label="Canción siguiente"
+                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                     </svg>
-                  )}
-                </button>
+                  </button>
+                </div>
                 
-                <button 
-                  className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
-                  onClick={onNextSong}
-                  aria-label="Canción siguiente"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {/* Control de volumen */}
+                <div className="flex justify-center md:justify-start">
+                  <VolumeControl audioRef={audioRef} />
+                </div>
               </div>
             </div>
           </div>
