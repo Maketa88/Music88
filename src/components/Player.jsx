@@ -123,28 +123,28 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, 
               </div>
               
               {/* Controles de reproducción y volumen */}
-              <div className="flex justify-center md:justify-start items-center space-x-4">
+              <div className="flex justify-center md:justify-start items-center space-x-2 md:space-x-3">
                 <button 
-                  className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
+                  className="p-2 text-gray-300 hover:text-white focus:outline-none transition-colors"
                   onClick={onPrevSong}
                   aria-label="Canción anterior"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                   </svg>
                 </button>
                 
                 <button 
-                  className="p-4 bg-violet-600 hover:bg-violet-500 text-white rounded-full shadow-lg focus:outline-none transform hover:scale-105 transition-all"
+                  className="p-3 md:p-4 bg-violet-600 hover:bg-violet-500 text-white rounded-full shadow-lg focus:outline-none transform hover:scale-105 transition-all"
                   onClick={() => setIsPlaying(!isPlaying)}
                   aria-label={isPlaying ? "Pausar" : "Reproducir"}
                 >
                   {isPlaying ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -152,21 +152,23 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, 
                 </button>
                 
                 <button 
-                  className="p-3 text-gray-300 hover:text-white focus:outline-none transition-colors"
+                  className="p-2 text-gray-300 hover:text-white focus:outline-none transition-colors"
                   onClick={onNextSong}
                   aria-label="Canción siguiente"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                   </svg>
                 </button>
                 
-                {/* Control de volumen integrado junto a los controles */}
-                <VolumeControl audioRef={audioRef} />
+                <div className="flex items-center gap-1 ml-1">
+                  {/* Control de volumen integrado junto a los controles */}
+                  <VolumeControl audioRef={audioRef} />
+                </div>
                 
                 {/* Botón de reproducción aleatoria */}
                 <button 
-                  className={`p-2 focus:outline-none transition-all rounded-full ${
+                  className={`p-1.5 focus:outline-none transition-all rounded-full ml-1 ${
                     isShuffleOn 
                       ? 'bg-violet-600 text-white shadow-lg hover:bg-violet-500 transform hover:scale-105' 
                       : 'text-gray-400 hover:text-gray-200'
@@ -175,7 +177,7 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, 
                   aria-label={isShuffleOn ? "Desactivar reproducción aleatoria" : "Activar reproducción aleatoria"}
                   title={isShuffleOn ? "Desactivar aleatorio" : "Activar aleatorio"}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                   </svg>
                 </button>
