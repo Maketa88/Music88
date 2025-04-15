@@ -1,6 +1,6 @@
 import { songs } from '../data/songs';
 
-function MusicLibrary({ onSongSelect, currentSongId, searchTerm = '', visible = true }) {
+function MusicLibrary({ onSongSelect, currentSongId, searchTerm = '' }) {
   // Filtrar canciones basado en el término de búsqueda
   const filteredSongs = searchTerm 
     ? songs.filter(song => 
@@ -8,16 +8,12 @@ function MusicLibrary({ onSongSelect, currentSongId, searchTerm = '', visible = 
         song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
         song.album.toLowerCase().includes(searchTerm.toLowerCase())
       )
-    : songs;
-
-  if (!visible && !searchTerm) {
-    return null; // No mostrar si no es visible y no hay búsqueda
-  }
+    : [];
 
   return (
     <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
       <h2 className="text-xl font-semibold mb-5">
-        {searchTerm ? `Resultados para "${searchTerm}"` : 'Biblioteca'}
+        Resultados para "{searchTerm}"
       </h2>
       
       <div className="overflow-y-auto max-h-[60vh] pr-1">

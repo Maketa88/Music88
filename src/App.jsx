@@ -9,7 +9,6 @@ function App() {
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [showLibrary, setShowLibrary] = useState(false); // Por defecto oculta
   
   const handleSongSelect = (song) => {
     setCurrentSong(song);
@@ -34,14 +33,6 @@ function App() {
   
   const handleSearch = (term) => {
     setSearchTerm(term);
-    // Si hay un término de búsqueda, mostramos la biblioteca
-    if (term) {
-      setShowLibrary(true);
-    }
-  };
-  
-  const toggleLibrary = () => {
-    setShowLibrary(!showLibrary);
   };
   
   return (
@@ -51,15 +42,11 @@ function App() {
         
         <div className="flex flex-col items-center gap-6">
           <div className="w-full max-w-3xl">
-            {/* Barra de búsqueda - mismo ancho que el reproductor */}
-            <SearchBar 
-              onSearch={handleSearch} 
-              onToggleLibrary={toggleLibrary}
-              showLibrary={showLibrary}
-            />
+            {/* Barra de búsqueda */}
+            <SearchBar onSearch={handleSearch} />
             
-            {/* Biblioteca de música - mismo ancho que el reproductor */}
-            {(showLibrary || searchTerm) && (
+            {/* Biblioteca de música - solo visible cuando hay búsqueda */}
+            {searchTerm && (
               <div className="mb-6">
                 <MusicLibrary 
                   onSongSelect={handleSongSelect} 
@@ -71,7 +58,7 @@ function App() {
             )}
             
             {/* Panel de reproducción */}
-            <div className={`${(!showLibrary && !searchTerm) ? 'mt-4' : ''}`}>
+            <div className={`${!searchTerm ? 'mt-4' : ''}`}>
               <Player 
                 currentSong={currentSong}
                 isPlaying={isPlaying}
