@@ -1,48 +1,8 @@
 import reactLogo from "../assets/mexicana.png";
 
-// Importar todas las canciones
-import ADiosLePido from "/music/A DIOS LE PIDO.mp3";
-import Ahora from "/music/AHORA.mp3";
-import AmarillaSeVuelve from "/music/AMARILLA SE PONE.mp3";
-import Amarillo from "/music/AMARILLO.mp3";
-import BesosEnGuerra from "/music/BESOS EN GUERRA.mp3";
-import CualEsEsa from "/music/CUAL ES ESA.mp3";
-import CuandoPararaLaLluvia from "/music/CUANDO PARARA LA LLUVIA EN MI CORAZON.mp3";
-import DagaAdicta from "/music/DAGA ADICTA.mp3";
-import DejameEntrar from "/music/DEJAME ENTRAR.mp3";
-import Dicen from "/music/DICEN.mp3";
-import DimeComoOlvidarte from "/music/DIME COMO OLVIDARTE.mp3";
-import EllaEsMiAmante from "/music/ELLA ES MI AMANTE.mp3";
-import Gatubela from "/music/GATUBELA.mp3";
-import GuaguancoDelAdios from "/music/GUAGUANCO DEL ADIOS.mp3";
-import Hooka from "/music/HOOKA.mp3";
-import Jure from "/music/JURE.mp3";
-import LaPregunta from "/music/LA PREGUNTA.mp3";
-import LlamadoDeEmergencia from "/music/LLAMADO DE EMERGENCIA.mp3";
-import Luna from "/music/LUNA.mp3";
-import MariposaTraicionera from "/music/MARIPOSA TRAICIONERA.mp3";
-import MeVoy from "/music/ME VOY.mp3";
-import MiExTeniaRazon from "/music/MI EX TENIA RAZON.mp3";
-
-import NadaEsEterno from "/music/NADA ES ETERNO.mp3";
-import Normal from "/music/NORMAL.mp3";
-import NoviaDeTodos from "/music/NOVIA DE TODOS.mp3";
-import NoviembreSinTi from "/music/NOVIEMBRE SIN TI.mp3";
-import Obligao from "/music/OBLIGAO.mp3";
-import PaginaDeAmor from "/music/PAGINA DE AMOR.mp3";
-import PrimeraCita from "/music/PRIMERA CITA.mp3";
-import Provenza from "/music/PROVENZA.mp3";
-import QuizasRemix from "/music/QUIZAS (REMIX).mp3";
-import RosaPastel from "/music/ROSA PASTEL.mp3";
-import SeAcaboElAmor from "/music/SE ACABO EL AMOR.mp3";
-import Secretos from "/music/SECRETOS.mp3";
-import SoloEsMejor from "/music/SOLO ES MEJOR.mp3";
-import UnaObraDeArte from "/music/UNA OBRA DE ARTE.mp3";
-import UnoSeCura from "/music/UNO SE CURA.mp3";
-
-import Vacaciones from "/music/VACACIONES.mp3";
-import YoNoQueriaEngañarte from "/music/YO NO QUERIA ENGAÑARTE.mp3";
-import YoTeHagoElAmor from "/music/YO TE HAGO EL AMOR.mp3";
+// Importar todas las canciones - cambiado a rutas públicas absolutas
+// Se eliminan las importaciones directas que causan problemas en Vercel
+// y se reemplazan por strings en los objetos songs
 
 export const songs = [
   {
@@ -52,7 +12,7 @@ export const songs = [
     album: "Inter Shibuya",
     duration: "3:22",
     cover: reactLogo,
-    url: Luna,
+    url: "/music/LUNA.mp3",
   },
   {
     id: 2,
@@ -61,7 +21,7 @@ export const songs = [
     album: "El Comienzo",
     duration: "3:51",
     cover: reactLogo,
-    url: Dicen,
+    url: "/music/DICEN.mp3",
   },
   {
     id: 3,
@@ -70,7 +30,7 @@ export const songs = [
     album: "Revolución de Amor",
     duration: "4:22",
     cover: reactLogo,
-    url: MariposaTraicionera,
+    url: "/music/MARIPOSA TRAICIONERA.mp3",
   },
   {
     id: 4,
@@ -79,7 +39,7 @@ export const songs = [
     album: "El Comienzo",
     duration: "3:38",
     cover: reactLogo,
-    url: AmarillaSeVuelve,
+    url: "/music/AMARILLA SE PONE.mp3",
   },
   {
     id: 5,
@@ -88,7 +48,7 @@ export const songs = [
     album: "Danny Ocean",
     duration: "3:41",
     cover: reactLogo,
-    url: Hooka,
+    url: "/music/HOOKA.mp3",
   },
   {
     id: 6,
@@ -97,7 +57,7 @@ export const songs = [
     album: "Orquídeas",
     duration: "3:51",
     cover: reactLogo,
-    url: DagaAdicta,
+    url: "/music/DAGA ADICTA.mp3",
   },
   {
     id: 7,
@@ -106,7 +66,7 @@ export const songs = [
     album: "Mor, No Le Temas A La Oscuridad",
     duration: "3:27",
     cover: reactLogo,
-    url: SoloEsMejor,
+    url: "/music/SOLO ES MEJOR.mp3",
   },
   {
     id: 8,
@@ -115,7 +75,7 @@ export const songs = [
     album: "Bucle",
     duration: "2:56",
     cover: reactLogo,
-    url: EllaEsMiAmante,
+    url: "/music/ELLA ES MI AMANTE.mp3",
   },
   {
     id: 9,
@@ -124,7 +84,7 @@ export const songs = [
     album: "ADN",
     duration: "3:48",
     cover: reactLogo,
-    url: Secretos,
+    url: "/music/SECRETOS.mp3",
   },
   {
     id: 10,
@@ -133,7 +93,7 @@ export const songs = [
     album: "Single",
     duration: "3:30",
     cover: reactLogo,
-    url: Obligao,
+    url: "/music/OBLIGAO.mp3",
   },
   {
     id: 11,
@@ -142,7 +102,7 @@ export const songs = [
     album: "2000",
     duration: "5:20",
     cover: reactLogo,
-    url: UnoSeCura,
+    url: "/music/UNO SE CURA.mp3",
   },
   {
     id: 12,
@@ -151,7 +111,7 @@ export const songs = [
     album: "Otro Nivel De Música",
     duration: "4:35",
     cover: reactLogo,
-    url: LaPregunta,
+    url: "/music/LA PREGUNTA.mp3",
   },
   {
     id: 13,
@@ -160,7 +120,7 @@ export const songs = [
     album: "The Academy",
     duration: "4:15",
     cover: reactLogo,
-    url: QuizasRemix,
+    url: "/music/QUIZAS (REMIX).mp3",
   },
   {
     id: 14,
@@ -169,7 +129,7 @@ export const songs = [
     album: "Agustín",
     duration: "4:07",
     cover: reactLogo,
-    url: UnaObraDeArte,
+    url: "/music/UNA OBRA DE ARTE.mp3",
   },
   {
     id: 15,
@@ -178,7 +138,7 @@ export const songs = [
     album: "Colmillo De Leche",
     duration: "2:54",
     cover: reactLogo,
-    url: PrimeraCita,
+    url: "/music/PRIMERA CITA.mp3",
   },
   {
     id: 16,
@@ -187,7 +147,7 @@ export const songs = [
     album: "Un Día Normal",
     duration: "3:25",
     cover: reactLogo,
-    url: ADiosLePido,
+    url: "/music/A DIOS LE PIDO.mp3",
   },
   {
     id: 17,
@@ -196,7 +156,7 @@ export const songs = [
     album: "Balas Perdidas",
     duration: "3:59",
     cover: reactLogo,
-    url: BesosEnGuerra,
+    url: "/music/BESOS EN GUERRA.mp3",
   },
   {
     id: 18,
@@ -205,7 +165,7 @@ export const songs = [
     album: "Mañana Será Bonito (Bichota Season)",
     duration: "2:44",
     cover: reactLogo,
-    url: MiExTeniaRazon,
+    url: "/music/MI EX TENIA RAZON.mp3",
   },
   {
     id: 19,
@@ -214,7 +174,7 @@ export const songs = [
     album: "Reik",
     duration: "3:21",
     cover: reactLogo,
-    url: NoviembreSinTi,
+    url: "/music/NOVIEMBRE SIN TI.mp3",
   },
   {
     id: 20,
@@ -223,7 +183,7 @@ export const songs = [
     album: "Dulce Beat",
     duration: "3:06",
     cover: reactLogo,
-    url: RosaPastel,
+    url: "/music/ROSA PASTEL.mp3",
   },
   {
     id: 21,
@@ -232,7 +192,7 @@ export const songs = [
     album: "Limón y Sal",
     duration: "3:01",
     cover: reactLogo,
-    url: MeVoy,
+    url: "/music/ME VOY.mp3",
   },
   {
     id: 22,
@@ -241,7 +201,7 @@ export const songs = [
     album: "Siembra",
     duration: "6:12",
     cover: reactLogo,
-    url: GuaguancoDelAdios,
+    url: "/music/GUAGUANCO DEL ADIOS.mp3",
   },
   {
     id: 23,
@@ -250,9 +210,17 @@ export const songs = [
     album: "Salsa Brava",
     duration: "4:52",
     cover: reactLogo,
-    url: PaginaDeAmor,
+    url: "/music/PAGINA DE AMOR.mp3",
   },
-
+  {
+    id: 24,
+    title: "Movimiento Naranja",
+    artist: "Yuawi",
+    album: "Single",
+    duration: "0:40",
+    cover: reactLogo,
+    url: "/music/MOVIMIENTO NARANJA.mp3",
+  },
   {
     id: 25,
     title: "Cuando Parará La Lluvia En Mi Corazón",
@@ -260,7 +228,7 @@ export const songs = [
     album: "Cuenta Conmigo",
     duration: "4:40",
     cover: reactLogo,
-    url: CuandoPararaLaLluvia,
+    url: "/music/CUANDO PARARA LA LLUVIA EN MI CORAZON.mp3",
   },
   {
     id: 26,
@@ -269,7 +237,7 @@ export const songs = [
     album: "Nuevas Metas",
     duration: "4:15",
     cover: reactLogo,
-    url: NadaEsEterno,
+    url: "/music/NADA ES ETERNO.mp3",
   },
   {
     id: 27,
@@ -278,7 +246,7 @@ export const songs = [
     album: "Dejame Entrar",
     duration: "3:36",
     cover: reactLogo,
-    url: DejameEntrar,
+    url: "/music/DEJAME ENTRAR.mp3",
   },
   {
     id: 28,
@@ -287,7 +255,7 @@ export const songs = [
     album: "La Esencia",
     duration: "2:59",
     cover: reactLogo,
-    url: YoTeHagoElAmor,
+    url: "/music/YO TE HAGO EL AMOR.mp3",
   },
   {
     id: 29,
@@ -296,7 +264,7 @@ export const songs = [
     album: "Single",
     duration: "3:34",
     cover: reactLogo,
-    url: SeAcaboElAmor,
+    url: "/music/SE ACABO EL AMOR.mp3",
   },
   {
     id: 30,
@@ -305,7 +273,7 @@ export const songs = [
     album: "Talento De Barrio",
     duration: "3:54",
     cover: reactLogo,
-    url: LlamadoDeEmergencia,
+    url: "/music/LLAMADO DE EMERGENCIA.mp3",
   },
   {
     id: 31,
@@ -314,7 +282,7 @@ export const songs = [
     album: "Contigo",
     duration: "2:50",
     cover: reactLogo,
-    url: NoviaDeTodos,
+    url: "/music/NOVIA DE TODOS.mp3",
   },
   {
     id: 32,
@@ -323,7 +291,7 @@ export const songs = [
     album: "Mañana Será Bonito",
     duration: "3:22",
     cover: reactLogo,
-    url: Gatubela,
+    url: "/music/GATUBELA.mp3",
   },
   {
     id: 33,
@@ -332,7 +300,7 @@ export const songs = [
     album: "Ferxxo (Vol. 1: M.O.R.)",
     duration: "2:47",
     cover: reactLogo,
-    url: Normal,
+    url: "/music/NORMAL.mp3",
   },
   {
     id: 34,
@@ -341,7 +309,7 @@ export const songs = [
     album: "Single",
     duration: "2:27",
     cover: reactLogo,
-    url: Jure,
+    url: "/music/JURE.mp3",
   },
   {
     id: 35,
@@ -350,7 +318,7 @@ export const songs = [
     album: "Colores",
     duration: "2:45",
     cover: reactLogo,
-    url: Amarillo,
+    url: "/music/AMARILLO.mp3",
   },
   {
     id: 36,
@@ -359,7 +327,7 @@ export const songs = [
     album: "Ahora",
     duration: "4:00",
     cover: reactLogo,
-    url: Ahora,
+    url: "/music/AHORA.mp3",
   },
   {
     id: 37,
@@ -368,9 +336,17 @@ export const songs = [
     album: "Ubuntu",
     duration: "4:15",
     cover: reactLogo,
-    url: DimeComoOlvidarte,
+    url: "/music/DIME COMO OLVIDARTE.mp3",
   },
-  
+  {
+    id: 38,
+    title: "Urrao",
+    artist: "Piso 21",
+    album: "El Amor En Los Tiempos Del Perreo",
+    duration: "1:51",
+    cover: reactLogo,
+    url: "/music/URRAO.mp3",
+  },
   {
     id: 39,
     title: "Cuál Es Esa",
@@ -378,7 +354,7 @@ export const songs = [
     album: "Vida Rockstar",
     duration: "2:55",
     cover: reactLogo,
-    url: CualEsEsa,
+    url: "/music/CUAL ES ESA.mp3",
   },
   {
     id: 40,
@@ -387,7 +363,7 @@ export const songs = [
     album: "Cómo Te Voy a Olvidar",
     duration: "4:36",
     cover: reactLogo,
-    url: YoNoQueriaEngañarte,
+    url: "/music/YO NO QUERIA ENGAÑARTE.mp3",
   },
   {
     id: 41,
@@ -396,7 +372,7 @@ export const songs = [
     album: "Mañana Será Bonito",
     duration: "3:30",
     cover: reactLogo,
-    url: Provenza,
+    url: "/music/PROVENZA.mp3",
   },
   {
     id: 42,
@@ -405,6 +381,6 @@ export const songs = [
     album: "Los Vaqueros: La Trilogía",
     duration: "3:02",
     cover: reactLogo,
-    url: Vacaciones,
+    url: "/music/VACACIONES.mp3",
   },
 ];
