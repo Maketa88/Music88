@@ -68,15 +68,7 @@ export const songs = [
     cover: reactLogo,
     url: "/music/SOLO ES MEJOR.mp3",
   },
-  {
-    id: 8,
-    title: "Ella Es Mi Amante",
-    artist: "Yandar y Yostin",
-    album: "Bucle",
-    duration: "2:56",
-    cover: reactLogo,
-    url: "/music/ELLA ES MI AMANTE.mp3",
-  },
+  
   {
     id: 9,
     title: "Secretos",
@@ -86,15 +78,7 @@ export const songs = [
     cover: reactLogo,
     url: "/music/SECRETOS.mp3",
   },
-  {
-    id: 10,
-    title: "Obligao",
-    artist: "Luigi 21 Plus",
-    album: "Single",
-    duration: "3:30",
-    cover: reactLogo,
-    url: "/music/OBLIGAO.mp3",
-  },
+  
   {
     id: 11,
     title: "Uno Se Cura",
@@ -203,24 +187,8 @@ export const songs = [
     cover: reactLogo,
     url: "/music/GUAGUANCO DEL ADIOS.mp3",
   },
-  {
-    id: 23,
-    title: "Página de Amor",
-    artist: "Tito Gómez",
-    album: "Salsa Brava",
-    duration: "4:52",
-    cover: reactLogo,
-    url: "/music/PAGINA DE AMOR.mp3",
-  },
-  {
-    id: 24,
-    title: "Movimiento Naranja",
-    artist: "Yuawi",
-    album: "Single",
-    duration: "0:40",
-    cover: reactLogo,
-    url: "/music/MOVIMIENTO NARANJA.mp3",
-  },
+  
+  
   {
     id: 25,
     title: "Cuando Parará La Lluvia En Mi Corazón",
@@ -338,24 +306,8 @@ export const songs = [
     cover: reactLogo,
     url: "/music/DIME COMO OLVIDARTE.mp3",
   },
-  {
-    id: 38,
-    title: "Urrao",
-    artist: "Piso 21",
-    album: "El Amor En Los Tiempos Del Perreo",
-    duration: "1:51",
-    cover: reactLogo,
-    url: "/music/URRAO.mp3",
-  },
-  {
-    id: 39,
-    title: "Cuál Es Esa",
-    artist: "Pirlo",
-    album: "Vida Rockstar",
-    duration: "2:55",
-    cover: reactLogo,
-    url: "/music/CUAL ES ESA.mp3",
-  },
+  
+  
   {
     id: 40,
     title: "Yo No Quería Engañarte",
