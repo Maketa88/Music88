@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import ShuffleButton from './ShuffleButton';
 import VolumeControl from './VolumeControl';
 
 function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, isShuffleOn, onShuffleToggle }) {
@@ -167,32 +168,19 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, 
                 </div>
                 
                 {/* Botón de reproducción aleatoria */}
-                <button 
-                  className={`p-1.5 focus:outline-none transition-all rounded-full ml-1 ${
-                    isShuffleOn 
-                      ? 'bg-violet-600 text-white shadow-lg hover:bg-violet-500 transform hover:scale-105' 
-                      : 'text-gray-400 hover:text-gray-200'
-                  }`}
-                  onClick={onShuffleToggle}
-                  aria-label={isShuffleOn ? "Desactivar reproducción aleatoria" : "Activar reproducción aleatoria"}
-                  title={isShuffleOn ? "Desactivar aleatorio" : "Activar aleatorio"}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
-                </button>
+                <ShuffleButton isShuffleOn={isShuffleOn} onShuffleToggle={onShuffleToggle} />
               </div>
             </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-col md:flex-row md:items-center py-6 justify-center">
-          <div className="w-52 h-52 bg-gray-700 rounded-lg mb-6 md:mb-0 md:mr-8 flex items-center justify-center shadow-lg ring-2 ring-gray-600 p-1">
+        <div className="flex flex-col items-center justify-center py-6">
+          <div className="mx-auto w-48 h-48 bg-gray-700 rounded-lg mb-4 flex items-center justify-center shadow-lg ring-2 ring-gray-600 p-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
             </svg>
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-center w-full">
             <p className="text-lg font-medium">Ninguna canción seleccionada</p>
             <p className="text-sm text-gray-500 mt-2">Selecciona una canción para reproducir</p>
           </div>
