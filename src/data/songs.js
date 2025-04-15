@@ -1,4 +1,4 @@
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../assets/mexicana.png';
 import Pagina from '../../public/music/pagina de amor.mp3';
 
 export const songs = [

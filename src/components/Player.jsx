@@ -79,12 +79,23 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong }
           <div className="flex flex-col md:flex-row md:items-center md:gap-8">
             {/* Lado izquierdo: Portada */}
             <div className="flex flex-col items-center md:w-1/3">
-              <div className={`w-48 h-48 md:w-56 md:h-56 rounded-lg shadow-xl mb-4 overflow-hidden transform ${isPlaying ? 'scale-105' : ''} transition-transform duration-300`}>
+              <div className={`relative w-52 h-52 md:w-60 md:h-60 p-1 rounded-lg mb-4 transform transition-all duration-300 ${
+                isPlaying 
+                  ? 'ring-4 ring-violet-500/90 shadow-lg shadow-violet-500/30' 
+                  : 'ring-2 ring-gray-600 shadow-md'
+              }`}>
                 <img 
                   src={currentSong.cover} 
                   alt={`${currentSong.album} cover`} 
-                  className="w-full h-full object-cover" 
+                  className="w-full h-full object-contain rounded-md" 
                 />
+                {isPlaying && (
+                  <div className="absolute bottom-2 right-2 bg-violet-600 rounded-full p-1.5 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+                    </svg>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -158,7 +169,7 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong }
         </>
       ) : (
         <div className="flex flex-col md:flex-row md:items-center py-6 justify-center">
-          <div className="w-48 h-48 bg-gray-700 rounded-lg mb-6 md:mb-0 md:mr-8 flex items-center justify-center shadow-lg">
+          <div className="w-52 h-52 bg-gray-700 rounded-lg mb-6 md:mb-0 md:mr-8 flex items-center justify-center shadow-lg ring-2 ring-gray-600 p-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
             </svg>
