@@ -9,6 +9,7 @@ function App() {
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isShuffleOn, setIsShuffleOn] = useState(false);
   
   const handleSongSelect = (song) => {
     setCurrentSong(song);
@@ -18,21 +19,47 @@ function App() {
   const handleNextSong = () => {
     if (!currentSong) return;
     
-    const currentIndex = songs.findIndex(song => song.id === currentSong.id);
-    const nextIndex = (currentIndex + 1) % songs.length;
-    setCurrentSong(songs[nextIndex]);
+    if (isShuffleOn) {
+      // Reproducción aleatoria: selecciona una canción al azar diferente a la actual
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * songs.length);
+      } while (songs[randomIndex].id === currentSong.id && songs.length > 1);
+      
+      setCurrentSong(songs[randomIndex]);
+    } else {
+      // Reproducción normal: selecciona la siguiente canción en orden
+      const currentIndex = songs.findIndex(song => song.id === currentSong.id);
+      const nextIndex = (currentIndex + 1) % songs.length;
+      setCurrentSong(songs[nextIndex]);
+    }
   };
   
   const handlePrevSong = () => {
     if (!currentSong) return;
     
-    const currentIndex = songs.findIndex(song => song.id === currentSong.id);
-    const prevIndex = (currentIndex - 1 + songs.length) % songs.length;
-    setCurrentSong(songs[prevIndex]);
+    if (isShuffleOn) {
+      // En modo aleatorio, la función "anterior" también selecciona al azar
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * songs.length);
+      } while (songs[randomIndex].id === currentSong.id && songs.length > 1);
+      
+      setCurrentSong(songs[randomIndex]);
+    } else {
+      // En modo normal, selecciona la canción anterior
+      const currentIndex = songs.findIndex(song => song.id === currentSong.id);
+      const prevIndex = (currentIndex - 1 + songs.length) % songs.length;
+      setCurrentSong(songs[prevIndex]);
+    }
   };
   
   const handleSearch = (term) => {
     setSearchTerm(term);
+  };
+  
+  const toggleShuffle = () => {
+    setIsShuffleOn(!isShuffleOn);
   };
   
   return (
@@ -65,6 +92,8 @@ function App() {
                 setIsPlaying={setIsPlaying}
                 onNextSong={handleNextSong}
                 onPrevSong={handlePrevSong}
+                isShuffleOn={isShuffleOn}
+                onShuffleToggle={toggleShuffle}
               />
             </div>
           </div>
