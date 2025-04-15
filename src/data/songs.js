@@ -50,15 +50,7 @@ export const songs = [
     cover: reactLogo,
     url: "/music/HOOKA.mp3",
   },
-  {
-    id: 6,
-    title: "Daga Adicta",
-    artist: "Luigi 21 Plus",
-    album: "Orquídeas",
-    duration: "3:51",
-    cover: reactLogo,
-    url: "/music/DAGA ADICTA.mp3",
-  },
+  
   {
     id: 7,
     title: "Solo Es Mejor",
