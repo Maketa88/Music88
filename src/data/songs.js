@@ -41,15 +41,7 @@ export const songs = [
     cover: reactLogo,
     url: "/music/AMARILLA SE PONE.mp3",
   },
-  {
-    id: 5,
-    title: "Hooka",
-    artist: "Don Omar",
-    album: "Danny Ocean",
-    duration: "3:41",
-    cover: reactLogo,
-    url: "/music/HOOKA.mp3",
-  },
+  
   
   {
     id: 7,
