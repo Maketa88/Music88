@@ -1,48 +1,48 @@
 import reactLogo from "../assets/mexicana.png";
 
 // Importar todas las canciones
-import ADiosLePido from "../../public/music/A DIOS LE PIDO.mp3";
-import Ahora from "../../public/music/AHORA.mp3";
-import AmarillaSeVuelve from "../../public/music/AMARILLA SE PONE.mp3";
-import Amarillo from "../../public/music/AMARILLO.mp3";
-import BesosEnGuerra from "../../public/music/BESOS EN GUERRA.mp3";
-import CualEsEsa from "../../public/music/CUAL ES ESA.mp3";
-import CuandoPararaLaLluvia from "../../public/music/CUANDO PARARA LA LLUVIA EN MI CORAZON.mp3";
-import DagaAdicta from "../../public/music/DAGA ADICTA.mp3";
-import DejameEntrar from "../../public/music/DEJAME ENTRAR.mp3";
-import Dicen from "../../public/music/DICEN.mp3";
-import DimeComoOlvidarte from "../../public/music/DIME COMO OLVIDARTE.mp3";
-import EllaEsMiAmante from "../../public/music/ELLA ES MI AMANTE.mp3";
-import Gatubela from "../../public/music/GATUBELA.mp3";
-import GuaguancoDelAdios from "../../public/music/GUAGUANCO DEL ADIOS.mp3";
-import Hooka from "../../public/music/HOOKA.mp3";
-import Jure from "../../public/music/JURE.mp3";
-import LaPregunta from "../../public/music/LA PREGUNTA.mp3";
-import LlamadoDeEmergencia from "../../public/music/LLAMADO DE EMERGENCIA.mp3";
-import Luna from "../../public/music/LUNA.mp3";
-import MariposaTraicionera from "../../public/music/MARIPOSA TRAICIONERA.mp3";
-import MeVoy from "../../public/music/ME VOY.mp3";
-import MiExTeniaRazon from "../../public/music/MI EX TENIA RAZON.mp3";
+import ADiosLePido from "/music/A DIOS LE PIDO.mp3";
+import Ahora from "/music/AHORA.mp3";
+import AmarillaSeVuelve from "/music/AMARILLA SE PONE.mp3";
+import Amarillo from "/music/AMARILLO.mp3";
+import BesosEnGuerra from "/music/BESOS EN GUERRA.mp3";
+import CualEsEsa from "/music/CUAL ES ESA.mp3";
+import CuandoPararaLaLluvia from "/music/CUANDO PARARA LA LLUVIA EN MI CORAZON.mp3";
+import DagaAdicta from "/music/DAGA ADICTA.mp3";
+import DejameEntrar from "/music/DEJAME ENTRAR.mp3";
+import Dicen from "/music/DICEN.mp3";
+import DimeComoOlvidarte from "/music/DIME COMO OLVIDARTE.mp3";
+import EllaEsMiAmante from "/music/ELLA ES MI AMANTE.mp3";
+import Gatubela from "/music/GATUBELA.mp3";
+import GuaguancoDelAdios from "/music/GUAGUANCO DEL ADIOS.mp3";
+import Hooka from "/music/HOOKA.mp3";
+import Jure from "/music/JURE.mp3";
+import LaPregunta from "/music/LA PREGUNTA.mp3";
+import LlamadoDeEmergencia from "/music/LLAMADO DE EMERGENCIA.mp3";
+import Luna from "/music/LUNA.mp3";
+import MariposaTraicionera from "/music/MARIPOSA TRAICIONERA.mp3";
+import MeVoy from "/music/ME VOY.mp3";
+import MiExTeniaRazon from "/music/MI EX TENIA RAZON.mp3";
 
-import NadaEsEterno from "../../public/music/NADA ES ETERNO.mp3";
-import Normal from "../../public/music/NORMAL.mp3";
-import NoviaDeTodos from "../../public/music/NOVIA DE TODOS.mp3";
-import NoviembreSinTi from "../../public/music/NOVIEMBRE SIN TI.mp3";
-import Obligao from "../../public/music/OBLIGAO.mp3";
-import PaginaDeAmor from "../../public/music/PAGINA DE AMOR.mp3";
-import PrimeraCita from "../../public/music/PRIMERA CITA.mp3";
-import Provenza from "../../public/music/PROVENZA.mp3";
-import QuizasRemix from "../../public/music/QUIZAS (REMIX).mp3";
-import RosaPastel from "../../public/music/ROSA PASTEL.mp3";
-import SeAcaboElAmor from "../../public/music/SE ACABO EL AMOR.mp3";
-import Secretos from "../../public/music/SECRETOS.mp3";
-import SoloEsMejor from "../../public/music/SOLO ES MEJOR.mp3";
-import UnaObraDeArte from "../../public/music/UNA OBRA DE ARTE.mp3";
-import UnoSeCura from "../../public/music/UNO SE CURA.mp3";
+import NadaEsEterno from "/music/NADA ES ETERNO.mp3";
+import Normal from "/music/NORMAL.mp3";
+import NoviaDeTodos from "/music/NOVIA DE TODOS.mp3";
+import NoviembreSinTi from "/music/NOVIEMBRE SIN TI.mp3";
+import Obligao from "/music/OBLIGAO.mp3";
+import PaginaDeAmor from "/music/PAGINA DE AMOR.mp3";
+import PrimeraCita from "/music/PRIMERA CITA.mp3";
+import Provenza from "/music/PROVENZA.mp3";
+import QuizasRemix from "/music/QUIZAS (REMIX).mp3";
+import RosaPastel from "/music/ROSA PASTEL.mp3";
+import SeAcaboElAmor from "/music/SE ACABO EL AMOR.mp3";
+import Secretos from "/music/SECRETOS.mp3";
+import SoloEsMejor from "/music/SOLO ES MEJOR.mp3";
+import UnaObraDeArte from "/music/UNA OBRA DE ARTE.mp3";
+import UnoSeCura from "/music/UNO SE CURA.mp3";
 
-import Vacaciones from "../../public/music/VACACIONES.mp3";
-import YoNoQueriaEngañarte from "../../public/music/YO NO QUERIA ENGAÑARTE.mp3";
-import YoTeHagoElAmor from "../../public/music/YO TE HAGO EL AMOR.mp3";
+import Vacaciones from "/music/VACACIONES.mp3";
+import YoNoQueriaEngañarte from "/music/YO NO QUERIA ENGAÑARTE.mp3";
+import YoTeHagoElAmor from "/music/YO TE HAGO EL AMOR.mp3";
 
 export const songs = [
   {
