@@ -45,9 +45,9 @@ function App() {
   };
   
   return (
-    <div className="min-h-screen bg-gray-950 text-white py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-950 text-white py-4 px-4 sm:px-4 lg:px-4">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Maketa88</h1>
+        <h1 className="text-3xl font-bold text-center mb-4">Maketa88</h1>
         
         <div className="flex flex-col items-center gap-6">
           <div className="w-full max-w-3xl">
