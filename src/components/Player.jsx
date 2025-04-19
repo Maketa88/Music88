@@ -18,6 +18,72 @@ function Player({ currentSong, isPlaying, setIsPlaying, onNextSong, onPrevSong, 
     }
   }, [currentSong, isPlaying]);
 
+  // Configurar MediaSession API para controles en la pantalla de bloqueo
+  useEffect(() => {
+    if (!currentSong || !('mediaSession' in navigator)) return;
+
+    // Configurar metadatos
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: currentSong.title,
+      artist: currentSong.artist,
+      album: currentSong.album,
+      artwork: [
+        { src: currentSong.cover, sizes: '512x512', type: 'image/png' }
+      ]
+    });
+
+    // Configurar acciones de control de reproducción
+    navigator.mediaSession.setActionHandler('play', () => {
+      setIsPlaying(true);
+      audioRef.current.play();
+    });
+
+    navigator.mediaSession.setActionHandler('pause', () => {
+      setIsPlaying(false);
+      audioRef.current.pause();
+    });
+
+    navigator.mediaSession.setActionHandler('previoustrack', onPrevSong);
+    navigator.mediaSession.setActionHandler('nexttrack', onNextSong);
+
+    // Actualizar estado de reproducción
+    navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+
+    return () => {
+      // Limpiar controladores cuando el componente se desmonte o la canción cambie
+      navigator.mediaSession.setActionHandler('play', null);
+      navigator.mediaSession.setActionHandler('pause', null);
+      navigator.mediaSession.setActionHandler('previoustrack', null);
+      navigator.mediaSession.setActionHandler('nexttrack', null);
+    };
+  }, [currentSong, isPlaying, onNextSong, onPrevSong, setIsPlaying]);
+
+  // Actualizar estado de reproducción cuando cambia isPlaying
+  useEffect(() => {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+    }
+  }, [isPlaying]);
+
+  // Actualizar posición de reproducción para MediaSession
+  useEffect(() => {
+    if (!('mediaSession' in navigator) || !audioRef.current) return;
+
+    const updatePositionState = () => {
+      if (audioRef.current && !isNaN(audioRef.current.duration)) {
+        navigator.mediaSession.setPositionState({
+          duration: audioRef.current.duration,
+          playbackRate: audioRef.current.playbackRate,
+          position: audioRef.current.currentTime
+        });
+      }
+    };
+
+    // Actualizar cada segundo
+    const interval = setInterval(updatePositionState, 1000);
+    return () => clearInterval(interval);
+  }, [currentSong]);
+
   useEffect(() => {
     // Verificamos que audioRef.current no sea null
     if (!audioRef.current) return;

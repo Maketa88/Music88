@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import MusicLibrary from './components/MusicLibrary'
 import Player from './components/Player'
@@ -10,7 +10,64 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isShuffleOn, setIsShuffleOn] = useState(false);
+  const [wakeLock, setWakeLock] = useState(null);
   
+  // Activar/desactivar el wakeLock automáticamente cuando se reproduce/pausa música
+  useEffect(() => {
+    if (!('wakeLock' in navigator)) return;
+    
+    const activateWakeLock = async () => {
+      if (isPlaying && currentSong) {
+        try {
+          // Solo solicitar wakeLock si no existe uno activo
+          if (!wakeLock) {
+            const lock = await navigator.wakeLock.request('screen');
+            setWakeLock(lock);
+            
+            // Escuchar el evento de liberación
+            lock.addEventListener('release', () => {
+              setWakeLock(null);
+            });
+          }
+        } catch (err) {
+          console.error("Error al activar WakeLock:", err);
+        }
+      } else {
+        // Liberar el wakeLock cuando se pausa la música
+        if (wakeLock) {
+          await wakeLock.release().catch(e => console.error("Error al liberar WakeLock:", e));
+          setWakeLock(null);
+        }
+      }
+    };
+    
+    activateWakeLock();
+  }, [isPlaying, currentSong, wakeLock]);
+  
+  // Reactivar el wakeLock cuando la página vuelve a estar visible
+  useEffect(() => {
+    const handleVisibilityChange = async () => {
+      if (document.visibilityState === 'visible' && isPlaying && !wakeLock) {
+        try {
+          const lock = await navigator.wakeLock.request('screen');
+          setWakeLock(lock);
+        } catch (err) {
+          console.error('Error al reactivar WakeLock:', err);
+        }
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      // Liberar el wakeLock al desmontar el componente
+      if (wakeLock) {
+        wakeLock.release().catch(err => console.error('Error al liberar WakeLock:', err));
+      }
+    };
+  }, [isPlaying, wakeLock]);
+
   const handleSongSelect = (song) => {
     setCurrentSong(song);
     setIsPlaying(true);
